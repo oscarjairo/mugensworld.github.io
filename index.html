@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.9.9';i.angular='5.2.11';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #buddypress div#item-header div#item-meta .highlight,
+        #buddypress div#item-header div#item-meta .activity, 
+        .post-review-numbers .overall-score b, 
+        .bbp-forum-content ul.sticky .fa-comment, 
+        .bbp-topics ul.sticky .fa-comment, 
+        .bbp-topics ul.super-sticky .fa-comment, 
+        .bbp-topics-front ul.super-sticky .fa-comment, 
+        #buddypress .activity-list li.load-more a, 
+        body .vc_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner h2 a:hover,
+        #bbpress-forums fieldset.bbp-form legend, .newsbh li:hover a, 
+        .newsbv li:hover a, 
+        .cart-notification span.item-name, 
+        .woocommerce div.product p.price, 
+        .price span.amount,
+        .woocommerce .widget_shopping_cart .total span, 
+        .nm-date span, 
+        .cart-notification span.item-name, 
+        .woocommerce div.product p.price, 
+        .price span.amount,
+        .dropdown:hover .dropdown-menu li > a:hover, 
+        .clan-generali .clan-members-app > .fas,
+        .blog-rating .overall-score i, 
+        .post-review .overall-score i, 
+        .post-review .score i, 
+        .nextmatch_wrap:hover .nm-clans span, 
+        input[type="password"]:focus, 
+        input[type="datetime"]:focus, 
+        input[type="datetime-local"]:focus, 
+        input[type="date"]:focus,
+        input[type="month"]:focus, 
+        input[type="time"]:focus, 
+        input[type="week"]:focus, 
+        input[type="number"]:focus, 
+        input[type="email"]:focus,
+        input[type="url"]:focus, 
+        input[type="search"]:focus, 
+        input[type="tel"]:focus, 
+        input[type="color"]:focus, 
+        .uneditable-input:focus{
+            color:#25c2f5 !important;
+        }
+
+        .item-options#members-list-options a.selected, 
+        .item-options#members-list-options a:hover, 
+        .item-options#members-list-options, 
+        .item-options#groups-list-options a.selected, 
+        .item-options#groups-list-options a:hover, 
+        .item-options#groups-list-options, 
+        .gallery-item a img, 
+        .match-map .map-image img, 
+        .nextmatch_wrap:hover img, 
+        .wrap:hover .clan1img, 
+        .matchimages img, 
+        .dropdown-menu, 
+        .widget .clanwar-list > li:first-child, 
+        .footer_widget .clanwar-list > li:first-child{
+            border-color:#25c2f5 !important;
+        }
+
+        #buddypress div.item-list-tabs ul li a span, 
+        .widget.clanwarlist-page .clanwar-list .date strong, 
+        .footer_widget.clanwarlist-page .clanwar-list .date strong, 
+        #matches .mminfo span, 
+        .footer_widget .clanwar-list .home-team, 
+        .footer_widget .clanwar-list .vs, 
+        .footer_widget .clanwar-list .opponent-team, 
+        .widget .clanwar-list .home-team, 
+        .widget .clanwar-list .vs, 
+        .widget .clanwar-list .opponent-team, 
+        div.bbp-template-notice, 
+        div.indicator-hint, 
+        .social a , 
+        .widget-title i, 
+        .profile-clans a:hover, 
+        .friendswrapper .friends-count i, 
+        .slider_com_wrap, 
+        .portfolio .row .span8 .plove a:hover, 
+        .span3 .plove a:hover, 
+        .icons-block i:hover, 
+        .navbar-inverse .nav > li > a > span, 
+        .similar-projects ul li h3, 
+        .member h3, 
+        .main-colour,
+        a, 
+        .dropdown-menu li > a:hover, 
+        .wallnav i, 
+        .blog-rating .overall-score .rating, 
+        div.rating:after, 
+        footer .copyright .social a:hover, 
+        .navbar-inverse .brand:hover, 
+        .member:hover > .member-social a, 
+        footer ul li a:hover, 
+        .widget ul li a:hover, 
+        .next_slide_text .fa-bolt ,  
+        .dropdown-menu li > a:focus, 
+        .dropdown-submenu:hover > a,  
+        .comment-body .comment-author,  
+        .navigation a:hover, 
+        .cart-wrap a, 
+        .bx-next-out:hover .next-arrow:before, 
+        body .navbar-wrapper .login-info .login-btn{
+            color:#25c2f5;
+        }
+
+        body .bbp-pagination-links a:hover, 
+        body .bbp-pagination-links span.current, 
+        .post-review-numbers.post-review .progress .progress-bar, 
+        .item-options#members-list-options a.selected, 
+        .item-options#members-list-options a:hover, 
+        .item-options#groups-list-options a.selected, 
+        .item-options#groups-list-options a:hover,
+        div.pagination a:focus, 
+        div.pagination a:hover, 
+        div.pagination span.current, 
+        .page-numbers:focus, 
+        .page-numbers:hover, 
+        .page-numbers.current, 
+        body.woocommerce nav.woocommerce-pagination ul li a:focus, 
+        body.woocommerce nav.woocommerce-pagination ul li a:hover, 
+        body.woocommerce nav.woocommerce-pagination ul li span.current, 
+        .widget .clanwar-list .tabs li:hover a, 
+        .widget .clanwar-list .tabs li.selected a, 
+        .bgpattern, 
+        .post-review, 
+        .widget_shopping_cart, 
+        .woocommerce .cart-notification, 
+        .cart-notification, 
+        .splitter li[class*="selected"] > a, 
+        .splitter li a:hover, 
+        .ls-wp-container .ls-nav-prev, 
+        .ls-wp-container .ls-nav-next, 
+        a.ui-accordion-header-active, 
+        .accordion-heading:hover, 
+        .block_accordion_wrapper .ui-state-hover, 
+        .cart-wrap, .clanwar-list li ul.tabs li:hover, 
+        .clanwar-list li ul.tabs li.selected a:hover, 
+        .clanwar-list li ul.tabs li.selected a, 
+        .dropdown .caret,
+        .tagcloud a:hover, 
+        .progress-striped .bar ,  
+        .bgpattern:hover > .icon, 
+        .progress-striped .bar, 
+        .member:hover > .bline, 
+        .blog-date span.date, 
+        .pbg, 
+        .pbg:hover, 
+        .pimage:hover > .pbg, 
+        ul.social-media li a:hover, 
+        .navigation a ,
+        body .theChampCommentingTabs li, 
+        .pagination ul > .active > a, 
+        .pagination ul > .active > span, 
+        .list_carousel a.prev:hover, 
+        .list_carousel a.next:hover, 
+        .title_wrapper, 
+        .pricetable .pricetable-col.featured .pt-price, 
+        .block_toggle .open, 
+        .pricetable .pricetable-featured .pt-price, 
+        .isotopeMenu, 
+        .bbp-topic-title h3, 
+        .modal-body .reg-btn, 
+        #LoginWithAjax_SubmitButton .reg-btn, 
+        .title-wrapper, 
+        .footer_widget h3, 
+        buddypress div.item-list-tabs ul li.selected a, 
+        .results-main-bg, 
+        .blog-date-noimg, 
+        .blog-date, 
+        .ticker-wrapper.has-js, 
+        .ticker-swipe  {
+            background-color:#25c2f5;
+        }
+
+        .vc_tta-tab, 
+        #matches .match-fimage .mversus .deletematch, 
+        .social-top a, 
+        .navbar-wrapper .login-info .login-btn .fas,
+        .clanwar-list .upcoming, 
+        #matches ul.cmatchesw li .deletematch, 
+        body .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel .vc_tta-panel-title,
+        .navbar-inverse .navbar-nav > li > a, 
+        .friendswrapper .add-friend, 
+        .msg_ntf,
+        .footer_widget .clanwar-list .scores, 
+        .widget .clanwar-list .scores, 
+        .user-avatar, 
+        .woocommerce-page .product-wrap a.button, 
+        .button-medium, 
+        a.group-button, 
+        .button-small, 
+        .button-big, 
+        button[type="submit"],
+        #TB_ajaxContent button#save, 
+        input[type="submit"], 
+        input[type="button"],
+        .footer_widget .clanwar-list .upcoming, 
+        .widget .clanwar-list .upcoming, 
+        .user-wrap a.btns, 
+        .cart-outer,
+        .footer_widget .clanwar-list .playing, 
+        .widget .clanwar-list .playing, 
+        .pricetable .pricetable-col.featured .pt-top, 
+        .pricetable .pricetable-featured .pt-top,
+        .after-nav .login-tag, 
+        .next-line, 
+        .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+        .bx-wrapper .bx-pager.bx-default-pager a.active:before, 
+        .after-nav .login-info a, 
+        .clan-page .clan-nav li, 
+        .wpb_tabs_nav li, 
+        .nav-tabs > li, 
+        #buddypress div.item-list-tabs ul li, 
+        .blog-date span.date, 
+        .blog-date-noimg span.date, 
+        .clanwar-list .draw, 
+        .carousel-indicators .active, 
+        .after-nav .login-info input[type="submit"], 
+        .after-nav .login-info a:hover{
+            background-image: -webkit-linear-gradient(bottom, #096aa1, #26c3f6);
+            background-image: -moz-linear-gradient(bottom, #096aa1, #26c3f6);
+            background-image: -o-linear-gradient(bottom, #096aa1, #26c3f6);
+            background-image: linear-gradient(to top, #096aa1, #26c3f6);
+        }
+        .ticker-title{
+            background-image: -webkit-linear-gradient(bottom, #26c3f6, #096aa1);
+            background-image: -moz-linear-gradient(bottom, #26c3f6, #096aa1);
+            background-image: -o-linear-gradient(bottom, #26c3f6, #096aa1);
+            background-image: linear-gradient(to top, #26c3f6, #096aa1);
+        }
+        .blog-date span.date, .blog-date-noimg span.date, .clanwar-list .upcoming, .carousel-indicators .active{
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.6), inset 0px 0px 1px 1px #05c7f7;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.6), inset 0px 0px 1px 1px #05c7f7;
+            box-shadow: 0 1px 2px rgba(0,0,0,.6), inset 0px 0px 1px 1px #05c7f7;
+        }
+        .slider_com_wrap *{
+            color:#26c3f6 !important;
+        }
+
+        .vc_tta-color-grey.vc_tta-style-classic .vc_tta-panel .vc_tta-panel-title , 
+        .vc_tta-tab, 
+        .pricetable .pricetable-col.featured .pt-top, 
+        .pricetable .pricetable-featured .pt-top,
+        .after-nav .login-tag, 
+        .next-line, 
+        .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+        .bx-wrapper .bx-pager.bx-default-pager a.active:before, 
+        .after-nav .login-info a,
+        .widget .clanwar-list .tabs li:hover a,
+        .after-nav .login-info input[type="submit"], 
+        .after-nav .login-info a, 
+        input[type="button"],
+        .match-map .map-score,
+        .footer_widget .clanwar-list .scores,
+        .footer_widget .clanwar-list .upcoming,
+        .footer_widget .clanwar-list .playing,
+        .widget .clanwar-list .scores,
+        .widget .clanwar-list .upcoming,
+        .widget .clanwar-list .playing, .msg_ntf,
+        .clanwar-list .draw, 
+        .user-avatar,
+        .navbar-inverse .navbar-nav > li.active > a,
+        .footer_widget .clanwar-list .tabs li:hover a,
+        .footer_widget .clanwar-list .tabs li.selected a,
+        .widget .clanwar-list .tabs li:hover a,
+        .widget .clanwar-list .tabs li.selected a, 
+        .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+        .bx-wrapper .bx-pager.bx-default-pager a.active:before{
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px #05c7f7;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px #05c7f7;
+            box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px #05c7f7;
+        }
+
+        .cart-outer, 
+        .friendswrapper .add-friend, 
+        .social-top a,  
+        .ticker-title, 
+        .user-wrap a.btns, 
+        #buddypress div.item-list-tabs ul li, 
+        .clan-page .clan-nav li, 
+        .wpb_tabs_nav li, 
+        .nav-tabs > li,
+        .woocommerce-page .product-wrap a.button, 
+        a.group-button, 
+        .button-medium, 
+        .button-small, 
+        .button-big, 
+        button[type="submit"],  
+        input[type="submit"], 
+        #TB_ajaxContent button#save{
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px #05c7f7;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px #05c7f7;
+            box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px #05c7f7;
+        }
+        .cart-outer:hover, 
+        .wpb_tabs_nav li:hover, 
+        .nav-tabs > li:hover, 
+        .clan-page .clan-nav li:hover, 
+        .woocommerce-page .product-wrap a.button:hover, 
+        .button-medium:hover, 
+        .button-small:hover, 
+        .button-big:hover, 
+        button[type="submit"]:hover, 
+        #TB_ajaxContent button#save:hover, 
+        input[type="submit"]:hover, 
+        #sitewide-notice p,
+        .friendswrapper .add-friend:hover, 
+        #buddypress div.item-list-tabs ul li:hover, 
+        .user-wrap a.btns:hover,
+        .social-top a:hover, 
+        .navbar-inverse .navbar-nav > li.current-menu-item > a, 
+        .navbar-inverse .navbar-nav > li > a:hover, 
+        .navbar-wrapper .login-info .login-btn .fas{
+            -webkit-box-shadow: 0 0 10px rgba(5,199,247,0.5), inset 0 0 1px 1px #05c7f7;
+            -moz-box-shadow: 0 0 10px rgba(5,199,247,0.5), inset 0 0 1px 1px #05c7f7;
+            box-shadow: 0 0 10px rgba(5,199,247,0.5), inset 0 0 1px 1px #05c7f7;
+        }
+
+        .button-medium, 
+        .button-small, 
+        .button-big, 
+        button[type="submit"], 
+        input[type="submit"], 
+        #TB_ajaxContent button#save{
+            background-color:#25c2f5;
+        }
+
+        .after-nav, .ticker-title:after{
+             border-color: #26c3f6;
+        }
+
+        .next-arrow{
+            border-left: 30px solid #26c3f6;
+        }
+
+        body .bbp-pagination-links a, 
+        body .bbp-pagination-links span.current, 
+        body .bbp-pagination-links a:hover, 
+        body .bbp-pagination-links span.current, 
+        .page-numbers, 
+        .newsbv li:hover .newsb-thumbnail, 
+        .newsbh li:hover .newsb-thumbnail a, 
+        div.bbp-template-notice, 
+        div.indicator-hint,  
+        div.pagination a, 
+        div.pagination span,
+        body.woocommerce nav.woocommerce-pagination ul li a, 
+        body.woocommerce nav.woocommerce-pagination ul li span{
+            border: 1px solid #25c2f5;
+        }
+
+        .woocommerce a.button, 
+        .woocommerce button.button, 
+        .woocommerce input.button, 
+        .woocommerce #respond input#submit, 
+        .woocommerce #content input.button, 
+        .woocommerce-page a.button, 
+        .woocommerce-page button.button, 
+        .woocommerce-page input.button, 
+        .woocommerce-page #respond input#submit, 
+        .woocommerce-page #content input.button, 
+        .woocommerce div.product .woocommerce-tabs ul.tabs li a, 
+        .woocommerce #content div.product .woocommerce-tabs ul.tabs li a, 
+        .woocommerce-page div.product .woocommerce-tabs ul.tabs li a, 
+        .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a {
+            background: #25c2f5  !important;
+        }
+
+        .woocommerce a.button:hover, 
+        .woocommerce button.button:hover, 
+        .woocommerce input.button:hover, 
+        .woocommerce #respond input#submit:hover, 
+        .woocommerce #content input.button:hover, 
+        .woocommerce-page a.button:hover, 
+        .woocommerce-page button.button:hover, 
+        .woocommerce-page input.button:hover, 
+        .woocommerce-page #respond input#submit:hover, 
+        .woocommerce-page #content input.button:hover, 
+        .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, 
+        .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a, 
+        .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active a, 
+        .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active a, 
+        .woocommerce table.cart td.actions .button.checkout-button, 
+        .button-medium:after, 
+        .button-small:after, 
+        .button-big:after, 
+        button[type="submit"]:after,
+        #TB_ajaxContent button#save:after, 
+        input[type="submit"]:after {
+            opacity:0.8;
+        }
+
+        .woocommerce span.onsale, 
+        .woocommerce-page span.onsale, 
+        .woocommerce-message, 
+        .woocommerce-error, 
+        .woocommerce-info, 
+        .woocommerce .widget_price_filter .ui-slider .ui-slider-range, 
+        .woocommerce-page .widget_price_filter .ui-slider .ui-slider-range{
+            background:#25c2f5 !important;
+        }
+
+        .woocommerce .product-wrap .add_to_cart_button.added, 
+        .woocommerce .product-wrap .add_to_cart_button.added:hover {
+            opacity:0.8;
+        }
+
+        #matches.clanpage-matches .title-wrapper .widget-title{
+            background:url(assets/img/stripe.png) repeat top left rgba(5,199,247,0.3) !important;
+        }
+
+        div.bbp-template-notice, div.indicator-hint{
+            background:rgba(5,199,247,0.1);
+        }
+        textarea:focus,
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="time"]:focus,
+        input[type="week"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="color"]:focus,
+        .uneditable-input:focus,
+        .gallery-item a img:hover{
+            border-color:#25c2f5;
+        }
+
+        #bbpress-forums li.bbp-header, 
+        #bbpress-forums fieldset.bbp-form legend, 
+        .bbp-topic-title h3, 
+        .bbp-topics-front ul.super-sticky i.icon-comment,
+        .bbp-topics ul.super-sticky i.icon-comment,
+        .bbp-topics ul.sticky i.icon-comment,
+        .bbp-forum-content ul.sticky i.icon-comment,
+        .header-colour{
+            /color:;
+        }
+
+        html{
+            background-color:#1d2031;
+        }
+        body{
+            background-attachment: fixed !important;
+            background:url(assets/img/header.jpg) no-repeat center top;
+        }
+    </style>   
+
+    <script type="text/javascript">
+        var templateDir = "assets/index.html";
+        var homeUrl = "index.html";
+        var adminUrl = "wp-admin/index.html";
+        var ajaxurl = "wp-admin/admin-ajax.html";
+        var slider_speed = "4000";
+    </script>
+
+    <title>
+        MUGEN'S WORLD
+    </title>
+    <link rel='stylesheet' id='fontawesome-css'  href='assets/css/alldd3c.css?ver=20130401' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-shadowbox-css'  href='assets/css/shadowboxcbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-easy-slider-css'  href='assets/css/easy-slidercbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-tooltip-css'  href='assets/css/tooltipcbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-bootstrap-css'  href='assets/css/bootstrapcbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-main-css'  href='assets/css/maincbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-bbpress-css'  href='assets/css/bbpresscbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-woocommerce-css'  href='assets/css/woocommercecbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-buddypress-css'  href='assets/css/buddypresscbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-clanwars-css'  href='assets/css/clanwarscbe0.css?ver=20160930' type='text/css' media='all' />
+    <link rel='stylesheet' id='blackfyre-fonts-css'
+    href='http://fonts.googleapis.com/css?family=Oswald%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic++++++++%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic++++++++%7COpen%2BSans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='custom-style1-css'  href='assets/css/jquery.fancybox3040.css?ver=20150401' type='text/css' media='all' />
+    <link rel='stylesheet' id='custom-style2-css'  href='assets/css/jquery.bxslider3040.css?ver=20150401' type='text/css' media='all' />
+    <link rel='stylesheet' id='animatecss-css'  href='assets/css/animate3040.css?ver=20150401' type='text/css' media='all' />
+    <link rel='stylesheet' id='vcfixes-css'  href='assets/css/vcfixes3040.css?ver=20150401' type='text/css' media='all' />
+    <link rel='stylesheet' id='buttons-css'  href='assets/css/buttons.min6619.css?ver=5.2.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='dashicons-css'  href='assets/css/dashicons.min6619.css?ver=5.2.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='mediaelement-css'  href='assets/js/mediaelement/mediaelementplayer-legacy.min45a0.css?ver=4.2.6-78496d1' type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-mediaelement-css'  href='assets/js/mediaelement/wp-mediaelement.min6619.css?ver=5.2.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='media-views-css'  href='assets/css/media-views.min6619.css?ver=5.2.5' type='text/css' media='all' />
+    <link rel='stylesheet' id='imgareaselect-css'  href='assets/js/imgareaselect/imgareaselect3bf4.css?ver=0.9.8' type='text/css' media='all' />
+    <link rel='stylesheet' id='the_champ_frontend_css-css'  href='assets/super-socializer/css/front418f.css?ver=7.12.37' type='text/css' media='all' />
+    <link rel='stylesheet' id='js_composer_front-css'  href='assets/js_composer/assets/css/js_composer.min52c7.css?ver=6.0.5' type='text/css' media='all' />
+    <script type='text/javascript' src='assets/js/jquery/jquery4a5f.js?ver=1.12.4-wp'></script>
+    <script type='text/javascript' src='assets/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='assets/addons/clan-wars/js/jquery.cookie.pack2846.js?ver=1.5.5'></script>
+    <script type='text/javascript' src='assets/addons/clan-wars/js/tabs2846.js?ver=1.5.5'></script>
+    <script type='text/javascript' src='assets/addons/clan-wars/js/tipsy/jquery.tipsy2c90.js?ver=0.1.7'></script>
+    <script type='text/javascript' src='assets/addons/clan-wars/js/public2846.js?ver=1.5.5'></script>
+    <script type='text/javascript'>
+    var BP_Confirm = {"are_you_sure":"Are you sure?"};
+    </script>
+    <script type='text/javascript' src='assets/buddypress/bp-core/js/confirm.minbb93.js?ver=5.0.0'></script>
+    <script type='text/javascript' src='assets/buddypress/bp-core/js/widget-members.minbb93.js?ver=5.0.0'></script>
+    <script type='text/javascript' src='assets/buddypress/bp-core/js/jquery-query.minbb93.js?ver=5.0.0'></script>
+    <script type='text/javascript' src='assets/buddypress/bp-core/js/vendor/jquery-cookie.minbb93.js?ver=5.0.0'></script>
+    <script type='text/javascript' src='assets/buddypress/bp-core/js/vendor/jquery-scroll-to.minbb93.js?ver=5.0.0'></script>
+    <script type='text/javascript'>
+        var BP_DTheme = {
+            "accepted":"Accepted",
+            "close":"Close",
+            "comments":"comments",
+            "leave_group_confirm":"Are you sure you want to leave this group?",
+            "mark_as_fav":"Favorite",
+            "my_favs":"My Favorites",
+            "rejected":"Rejected",
+            "remove_fav":"Remove Favorite",
+            "show_all":"Show all",
+            "show_all_comments":"Show all comments for this thread",
+            "show_x_comments":"Show all comments (%d)",
+            "unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.",
+            "view":"View",
+            "store_filter_settings":""
+        };
+    </script>
+    <script type='text/javascript' src='assets/buddypress/bp-templates/bp-legacy/js/buddypress.minbb93.js?ver=5.0.0'>
+    </script>
+    <script type='text/javascript' src='assets/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'>
+    </script>
+    <script type='text/javascript'>
+        var wc_add_to_cart_params = {
+            "ajax_url":"\/blackfyre\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url":"\/blackfyre\/?wc-ajax=%%endpoint%%",
+            "i18n_view_cart":"View cart",
+            "cart_url":"https:\/\/skywarriorthemes.com\/blackfyre\/cart\/",
+            "is_cart":"","cart_redirect_after_add":"no"
+        };
+    </script>
+    <script type='text/javascript' src='assets/woocommerce/assets/js/frontend/add-to-cart.minf43b.js?ver=3.7.1'></script>
+    <script type='text/javascript' src='assets/js_composer/assets/js/vendors/woocommerce-add-to-cart52c7.js?ver=6.0.5'></script>
+    <script type='text/javascript'>
+        var userSettings = {"url":"\/blackfyre\/","uid":"0","time":"1581782095","secure":"1"};
+    </script>
+    <script type='text/javascript' src='assets/js/utils.min6619.js?ver=5.2.5'></script>
+    <script type='text/javascript' src='assets/js/plupload/moxie.mine34c.js?ver=1.3.5'></script>
+    <script type='text/javascript' src='assets/js/plupload/plupload.min6c17.js?ver=2.1.9'></script>
+    <script type='text/javascript' src='assets/js/mediaelement/mediaelement-and-player.min45a0.js?ver=4.2.6-78496d1'></script>
+    <script type='text/javascript' src='assets/js/mediaelement/mediaelement-migrate.min6619.js?ver=5.2.5'></script>
+    <script type='text/javascript'>
+        var _wpmejsSettings = {
+            "pluginPath":"\/blackfyre\/wp-includes\/js\/mediaelement\/",
+            "classPrefix":"mejs-",
+            "stretching":"responsive"
+        };
+    </script>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="assets/wlwmanifest.xml" /> 
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='index.html' />
+    <link rel="alternate" type="application/json+oembed" href="assets/oembed/1.0/embed3db8.json?url=https%3A%2F%2Fskywarriorthemes.com%2Fblackfyre%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="assets/oembed/1.0/embed7fbf?url=https%3A%2F%2Fskywarriorthemes.com%2Fblackfyre%2F&amp;format=xml" />
+    <script type="text/javascript">var ajaxurl = 'wp-admin/admin-ajax.html';</script>
+   
+</head>
+
+<body class="home-page bp-legacy home page-template page-template-tmp-home page-template-tmp-home-php page page-id-1753 theme-blackfyre woocommerce-no-js wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
+
+
+
+<!-- CONTENIDO -->
+<div id="main_wrapper">
+<!-- CONTENIDO -->
+
+
+<section class="sw-style" data-cookie-path="/skywarrior/">
+
+    <div class="toggle"><a style="font-size: 22px;" class="fas fa-tint"></a></div>
+
+    <div class="selector cf">
+        <div class="style-heading">ESTILO</div>
+
+        <div class="sw">
+            <div class="heading">¡BIENVENIDO!</div>
+
+            <div class="sample-colors">
+                <a href="#" class="sample-color blue active"></a>
+                <a href="#" class="sample-color green"></a>
+                <a href="#" class="sample-color yellow"></a>
+                <a href="#" class="sample-color orange"></a>
+                <a href="#" class="sample-color red"></a>
+            </div>
+        </div>
+
+        <div class="sw">
+        <div class="heading">Hola Gamer, Disfruta de la experiencia personalizando la pagina al color de tu preferencia</div>
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="above-nav container">
+        <div class="social-top">
+            <a class="rss" target="_blank" href="#">
+                <i class="fas fa-rss"></i> 
+            </a>                 
+            <a class="dribbble" target="_blank" href="#">
+                <i class="fab fa-dribbble"></i> 
+            </a>                 
+            <a class="vimeo" target="_blank" href="#">
+                <i class="fab fa-vimeo-v"></i> 
+            </a>                 
+            <a class="youtube" target="_blank" href="#">
+                <i class="fab fa-youtube"></i> 
+            </a>                 
+            <a class="twitch" target="_blank" href="#">
+                <i class="fab fa-twitch"></i>
+            </a>                 
+            <a class="instagram" target="_blank" href="#">
+                <i class="fab fa-instagram"></i>
+            </a>                 
+            <a class="steam" target="_blank" href="#">
+                <i class="fab fa-steam"></i>
+            </a>                 
+            <a class="pinterest" target="_blank" href="#">
+                <i class="fab fa-pinterest"></i> 
+            </a>                 
+            <a class="google-plus" target="_blank" href="#">
+                <i class="fab fa-google-plus-g"></i>
+            </a>                 
+            <a class="twitter" target="_blank" href="#">
+                <i class="fab fa-twitter"></i>
+            </a>                 
+            <a class="facebook" target="_blank" href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>                        
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    
+
+  <ion-app></ion-app>
+
+
+
+<!-- CONTENIDO -->
+</div>
+<!-- CONTENIDO -->
+
+
+        <div id="fb-root"></div>
+        <script type="text/javascript">
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    </script>
+            <script type="text/javascript">
+            var wc_product_block_data = JSON.parse( decodeURIComponent( '%7B%22min_columns%22%3A1%2C%22max_columns%22%3A6%2C%22default_columns%22%3A3%2C%22min_rows%22%3A1%2C%22max_rows%22%3A6%2C%22default_rows%22%3A1%2C%22thumbnail_size%22%3A300%2C%22placeholderImgSrc%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fwp-content%5C%2Fuploads%5C%2Fwoocommerce-placeholder.png%22%2C%22min_height%22%3A500%2C%22default_height%22%3A500%2C%22isLargeCatalog%22%3Afalse%2C%22limitTags%22%3Afalse%2C%22hasTags%22%3Afalse%2C%22productCategories%22%3A%5B%7B%22term_id%22%3A109%2C%22name%22%3A%22Uncategorized%22%2C%22slug%22%3A%22uncategorized%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A109%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A0%2C%22count%22%3A0%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Funcategorized%5C%2F%22%7D%2C%7B%22term_id%22%3A15%2C%22name%22%3A%22Albums%22%2C%22slug%22%3A%22albums%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A15%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A11%2C%22count%22%3A4%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fmusic%5C%2Falbums%5C%2F%22%7D%2C%7B%22term_id%22%3A9%2C%22name%22%3A%22Clothing%22%2C%22slug%22%3A%22clothing%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A9%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A0%2C%22count%22%3A12%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fclothing%5C%2F%22%7D%2C%7B%22term_id%22%3A10%2C%22name%22%3A%22Hoodies%22%2C%22slug%22%3A%22hoodies%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A10%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A9%2C%22count%22%3A6%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fclothing%5C%2Fhoodies%5C%2F%22%7D%2C%7B%22term_id%22%3A11%2C%22name%22%3A%22Music%22%2C%22slug%22%3A%22music%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A11%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A0%2C%22count%22%3A6%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fmusic%5C%2F%22%7D%2C%7B%22term_id%22%3A12%2C%22name%22%3A%22Posters%22%2C%22slug%22%3A%22posters%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A12%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A0%2C%22count%22%3A5%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fposters%5C%2F%22%7D%2C%7B%22term_id%22%3A13%2C%22name%22%3A%22Singles%22%2C%22slug%22%3A%22singles%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A13%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A11%2C%22count%22%3A2%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fmusic%5C%2Fsingles%5C%2F%22%7D%2C%7B%22term_id%22%3A14%2C%22name%22%3A%22T-shirts%22%2C%22slug%22%3A%22t-shirts%22%2C%22term_group%22%3A0%2C%22term_taxonomy_id%22%3A14%2C%22taxonomy%22%3A%22product_cat%22%2C%22description%22%3A%22%22%2C%22parent%22%3A9%2C%22count%22%3A6%2C%22filter%22%3A%22raw%22%2C%22link%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2Fproduct-category%5C%2Fclothing%5C%2Ft-shirts%5C%2F%22%7D%5D%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fskywarriorthemes.com%5C%2Fblackfyre%5C%2F%22%7D' ) );
+        </script>
+        <link rel='stylesheet' id='gglcptch-css'  href='assets/google-captcha/css/gglcptche282.css?ver=1.52' type='text/css' media='all' />
+<link rel='stylesheet' id='vc_animate-css-css'  href='assets/js_composer/assets/lib/bower/animate-css/animate.min52c7.css?ver=6.0.5' type='text/css' media='all' />
+<script type='text/javascript' src='assets/bbpress/templates/default/js/editor01c4.js?ver=2.5.14-6684'></script>
+<script type='text/javascript' src='assets/js/comment-reply.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"skywarriorthemes-blackfyre"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/disqus-comment-system/public/js/comment_countd4e0.js?ver=3.0.17'></script>
+<script type='text/javascript' src='assets/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/blackfyre\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/blackfyre\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/woocommerce/assets/js/frontend/woocommerce.minf43b.js?ver=3.7.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/blackfyre\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/blackfyre\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_1d906cff0b97924842e1fd8f2cf14677","fragment_name":"wc_fragments_1d906cff0b97924842e1fd8f2cf14677","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/woocommerce/assets/js/frontend/cart-fragments.minf43b.js?ver=3.7.1'></script>
+<script type='text/javascript' src='assets/js/bootstrap.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var settingsNoty = {"challenge_accepted":"Challenge accepted!","challenge_rejected":"Challenge rejected!","delete_accepted":"Delete accepted!","delete_rejected":"Delete rejected!","match_delete_rejected":"Match delete rejected!","match_deleted_request":"Delete request sent!","edit_accepted":"Edit accepted!","edit_rejected":"Edit rejected!","match_deleted":"Match deleted!","match_deleted_canceled":"Match delete canceled!","score_accepted":"Score accepted!","score_rejected":"Score rejected!","challenge_request_sent":"Challenge request sent!","submitted":"Score has been submitted!","already_submitted":"Score has already been submitted by other team!","join_clan":"Your request to join clan has been sent!","let_this_member_join":"User joined your clan!","member_not_there":"User canceled his join request!","remove_friend":"Removed from clan!","cancel_request":"Request canceled!","make_administrator":"Added as administrator!","downgrade_to_user":"Admin downgraded!","reported":"Match has been reported!","clan_deleted":"Clan has been deleted!","delete_page_background":"Clan page background deleted successfully!","login_empty":"Please fill out the form!","privacy_plc":"Please accept our Privacy Policy!","privacy_enabled":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/noty/packaged/jquery.noty.packaged.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/theme.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/remove-vc-elements6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/bx_slider_regular6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/easing6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/main6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery.fancybox6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery-ui.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery.carouFredSel-6.2.1-packed6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/appear6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery.webticker6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery.bxslider.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/isotope6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/imagesloaded.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery.validate.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/ps6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/sharethis6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var settingsGlobal = {"checking_name":"Checking if clan name is unique...","taken_name":"Clan name is taken! Please select a unique clan name!","available_name":"Clan name is available!","login_failed":"Incorrect Username or Password!","login_failed_captcha":"Captcha value not valid!","tickerspeed":"50","date_format":"MM d, yy","shareThis":"0","bb_has_forums":"yes","newforumtitle":"Forums","isMine":"1","isAdmin":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/global6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/imagescale6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/transit6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var settings = {"authlocation":"https:\/\/skywarriorthemes.com\/blackfyre\/wp-content\/themes\/blackfyre\/include\/","ajax":"https:\/\/skywarriorthemes.com\/blackfyre\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/social6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpCWL10n = {"plugin_url":"https:\/\/skywarriorthemes.com\/blackfyre\/wp-content\/themes\/blackfyre\/addons\/clan-wars","addRound":"Add Round","excludeMap":"Exclude map from match","removeRound":"Remove round"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/addons/clan-wars/js/matches6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var heartLove = {"ajaxurl":"https:\/\/skywarriorthemes.com\/blackfyre\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/addons/heart/love/js/heart-love5152.js?ver=1.0'></script>
+<script type='text/javascript' src='assets/js/underscore.min4511.js?ver=1.8.3'></script>
+<script type='text/javascript' src='assets/js/shortcode.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/backbone.min9632.js?ver=1.2.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/blackfyre\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/wp-util.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/wp-backbone.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpMediaModelsL10n = {"settings":{"ajaxurl":"\/blackfyre\/wp-admin\/admin-ajax.php","post":{"id":0}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/media-models.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pluploadL10n = {"queue_limit_exceeded":"You have attempted to queue too many files.","file_exceeds_size_limit":"%s exceeds the maximum upload size for this site.","zero_byte_file":"This file is empty. Please try another.","invalid_filetype":"Sorry, this file type is not permitted for security reasons.","not_an_image":"This file is not an image. Please try another.","image_memory_exceeded":"Memory exceeded. Please try another smaller file.","image_dimensions_exceeded":"This is larger than the maximum size. Please try another.","default_error":"An error occurred in the upload. Please try again later.","missing_upload_url":"There was a configuration error. Please contact the server administrator.","upload_limit_exceeded":"You may only upload 1 file.","http_error":"HTTP error.","upload_failed":"Upload failed.","big_upload_failed":"Please try uploading this file with the %1$sbrowser uploader%2$s.","big_upload_queued":"%s exceeds the maximum upload size for the multi-file uploader when used in your browser.","io_error":"IO error.","security_error":"Security error.","file_cancelled":"File canceled.","upload_stopped":"Upload stopped.","dismiss":"Dismiss","crunching":"Crunching\u2026","deleted":"moved to the trash.","error_uploading":"\u201c%s\u201d has failed to upload."};
+var _wpPluploadSettings = {"defaults":{"file_data_name":"async-upload","url":"\/blackfyre\/wp-admin\/async-upload.php","filters":{"max_file_size":"5242880b","mime_types":[{"extensions":"jpg,jpeg,jpe,gif,png,bmp,tiff,tif,ico,asf,asx,wmv,wmx,wm,avi,divx,flv,mov,qt,mpeg,mpg,mpe,mp4,m4v,ogv,webm,mkv,3gp,3gpp,3g2,3gp2,txt,asc,c,cc,h,srt,csv,tsv,ics,rtx,css,vtt,dfxp,mp3,m4a,m4b,aac,ra,ram,wav,ogg,oga,flac,mid,midi,wma,wax,mka,rtf,pdf,class,tar,zip,gz,gzip,rar,7z,psd,xcf,doc,pot,pps,ppt,wri,xla,xls,xlt,xlw,mdb,mpp,docx,docm,dotx,dotm,xlsx,xlsm,xlsb,xltx,xltm,xlam,pptx,pptm,ppsx,ppsm,potx,potm,ppam,sldx,sldm,onetoc,onetoc2,onetmp,onepkg,oxps,xps,odt,odp,ods,odg,odc,odb,odf,wp,wpd,key,numbers,pages"}]},"multipart_params":{"action":"upload-attachment","_wpnonce":"4b3f238f43"}},"browser":{"mobile":false,"supported":true},"limitExceeded":false};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/plupload/wp-plupload.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript' src='assets/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript' src='assets/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript' src='assets/js/jquery/ui/sortable.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript' src='assets/js/mediaelement/wp-mediaelement.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpApiSettings = {"root":"https:\/\/skywarriorthemes.com\/blackfyre\/wp-json\/","nonce":"2bd8914f6a","versionString":"wp\/v2\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='assets/js/api-request.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/media-views.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/media-editor.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js/wp-embed.min6619.js?ver=5.2.5'></script>
+<script type='text/javascript' src='assets/js_composer/assets/js/dist/js_composer_front.min52c7.js?ver=6.0.5'></script>
+<script type='text/javascript' src='assets/js_composer/assets/lib/vc_waypoints/vc-waypoints.min52c7.js?ver=6.0.5'></script>
+<script type='text/javascript' src='assets/js/jquery/ui/tabs.mine899.js?ver=1.11.4'></script>
+<script type='text/javascript' data-cfasync="false" async="async" defer="defer" src='../../www.google.com/recaptcha/apif1c5.js?render=explicit&amp;ver=1.52'></script>
+<script type='text/javascript'>
+var gglcptch = {"options":{"version":"v2","sitekey":"6Le4e0EUAAAAAKN0UC4elmmcdL4N-CVuVPE5MFF-","theme":"light","error":"<strong>Warning<\/strong>:&nbsp;More than one reCAPTCHA has been found in the current form. Please remove all unnecessary reCAPTCHA fields to make it work properly.","disable":0},"vars":{"visibility":false}};
+</script>
+<script type='text/javascript' src='assets/google-captcha/js/scripte282.js?ver=1.52'></script>
+<link rel="stylesheet" href="assets/colorstyles/picker.css">
+<script type="text/javascript" src="assets/colorstyles/demo.js"></script>
+
+<script type="text/html" id="css-color">
+
+body .vc_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner h2 a:hover,
+#bbpress-forums fieldset.bbp-form legend, .newsbh li:hover a, .newsbv li:hover a, .cart-notification span.item-name, .woocommerce div.product p.price, .price span.amount,
+.woocommerce .widget_shopping_cart .total span, .nm-date span, .cart-notification span.item-name, .woocommerce div.product p.price, .price span.amount,
+.dropdown:hover .dropdown-menu li > a:hover, .clan-generali .clan-members-app > .fa,
+.nextmatch_wrap:hover .nm-clans span, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus,
+input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus,
+input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus
+{
+    color:%color% !important;
+}
+#buddypress div.item-list-tabs ul li a span, .widget.clanwarlist-page .clanwar-list .date strong, .footer_widget.clanwarlist-page .clanwar-list .date strong, #matches .mminfo span, .footer_widget .clanwar-list .home-team, .footer_widget .clanwar-list .vs, .footer_widget .clanwar-list .opponent-team, .widget .clanwar-list .home-team, .widget .clanwar-list .vs, .widget .clanwar-list .opponent-team, div.bbp-template-notice, div.indicator-hint, .social a, .widget-title i, .profile-clans a:hover, .friendswrapper .friends i, .slider_com_wrap, .portfolio .row .span8 .plove a:hover, .span3 .plove a:hover, .icons-block i:hover, .navbar-inverse .nav > li > a > span, .similar-projects ul li h3, .member h3, .main-colour, a, .dropdown-menu li > a:hover, .wallnav i, div.rating:after, footer .copyright .social a:hover, .navbar-inverse .brand:hover, .member:hover > .member-social a, footer ul li a:hover, .widget ul li a:hover, .next_slide_text .fa-bolt, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a, .comment-body .comment-author, .navigation a:hover, .cart-wrap a, .bx-next-out:hover .next-arrow:before, body .navbar-wrapper .login-info .login-btn{
+    color:%color%;
+  }
+.gallery-item a img, .match-map .map-image img, .nextmatch_wrap:hover img, .wrap:hover .clan1img, .matchimages img, .dropdown-menu, .widget .clanwar-list > li:first-child, .footer_widget .clanwar-list > li:first-child{
+    border-color:%color% !important;
+}
+div.pagination a:focus, div.pagination a:hover, div.pagination span.current, body.woocommerce nav.woocommerce-pagination ul li a:focus, body.woocommerce nav.woocommerce-pagination ul li a:hover, body.woocommerce nav.woocommerce-pagination ul li span.current, .widget .clanwar-list .tabs li:hover a, .widget .clanwar-list .tabs li.selected a, .bgpattern, .widget_shopping_cart, .woocommerce .cart-notification, .cart-notification, .splitter li[class*="selected"] > a, .splitter li a:hover, .ls-wp-container .ls-nav-prev, .ls-wp-container .ls-nav-next, a.ui-accordion-header-active, .accordion-heading:hover, .block_accordion_wrapper .ui-state-hover, .cart-wrap, .clanwar-list li ul.tabs li:hover, .clanwar-list li ul.tabs li.selected a:hover, .clanwar-list li ul.tabs li.selected a, .dropdown .caret,
+.tagcloud a:hover, .progress-striped .bar ,  .bgpattern:hover > .icon, .progress-striped .bar, .member:hover > .bline, .blog-date span.date,
+ .pbg, .pbg:hover, .pimage:hover > .pbg, ul.social-media li a:hover, .navigation a ,
+ .pagination ul > .active > a, .pagination ul > .active > span, .list_carousel a.prev:hover, .list_carousel a.next:hover, .title_wrapper, .pricetable .pricetable-col.featured .pt-price, .block_toggle .open, .pricetable .pricetable-featured .pt-price, .isotopeMenu, .bbp-topic-title h3, .modal-body .reg-btn, #LoginWithAjax_SubmitButton .reg-btn, buddypress div.item-list-tabs ul li.selected a, .results-main-bg, .blog-date-noimg, .blog-date, .ticker-wrapper.has-js, .ticker-swipe {
+    background-color:%color% !important;
+}
+.button-medium, .button-small, .button-big, button[type="submit"], input[type="submit"]{
+    background-color:%color% ;
+}
+.after-nav, .ticker-title:after{
+     border-color: %color%;
+}
+.social-top a, .navbar-wrapper .login-info .login-btn .fa,
+.clanwar-list .upcoming, #matches ul.cmatchesw li .deletematch,
+.navbar-inverse .navbar-nav > li > a, .friendswrapper .add-friend, .msg_ntf,
+.footer_widget .clanwar-list .scores, .widget .clanwar-list .scores, .user-avatar, .woocommerce-page .product-wrap a.button, .button-medium, .button-small, .button-big, button[type="submit"], input[type="submit"], input[type="button"],
+.footer_widget .clanwar-list .upcoming, .widget .clanwar-list .upcoming, .user-wrap a.btns, .cart-outer,
+.footer_widget .clanwar-list .playing, .widget .clanwar-list .playing, .pricetable .pricetable-col.featured .pt-top, .pricetable .pricetable-featured .pt-top,
+.after-nav .login-tag, .next-line, .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+.bx-wrapper .bx-pager.bx-default-pager a.active:before, .after-nav .login-info a, .clan-page .clan-nav li, .wpb_tabs_nav li, .nav-tabs > li,
+ #buddypress div.item-list-tabs ul li,
+ .blog-date span.date, .blog-date-noimg span.date, .clanwar-list .draw, .carousel-indicators .active, .after-nav .login-info input[type="submit"], .after-nav .login-info a:hover{
+
+
+     background-image: -moz-linear-gradient(top, %color% 0%, %bottomgrad% 100%);
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,%color%), color-stop(100%,%bottomgrad%));
+     background-image: -webkit-linear-gradient(top, %color% 0%,%bottomgrad% 100%);
+     background-image: -o-linear-gradient(top, %color% 0%,%bottomgrad% 100%);
+     background-image: -ms-linear-gradient(top, %color% 0%,%bottomgrad% 100%);
+     background-image: linear-gradient(to bottom, %color% 0%,%bottomgrad% 100%);
+
+}
+.ticker-title{
+    background-image: -moz-linear-gradient(top, %bottomgrad% 0%, %color% 100%);
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,%bottomgrad%), color-stop(100%,%color%));
+     background-image: -webkit-linear-gradient(top, %bottomgrad% 0%,%color% 100%);
+     background-image: -o-linear-gradient(top, %bottomgrad% 0%,%color% 100%);
+     background-image: -ms-linear-gradient(top, %bottomgrad% 0%,%color% 100%);
+     background-image: linear-gradient(to bottom, %bottomgrad% 0%,%color% 100%);
+}
+.blog-date span.date, .blog-date-noimg span.date, .clanwar-list .upcoming, .carousel-indicators .active{
+
+}
+.slider_com_wrap *{
+    color:%color% !important;
+}
+
+.pricetable .pricetable-col.featured .pt-top, .pricetable .pricetable-featured .pt-top,
+.after-nav .login-tag, .next-line, .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+.bx-wrapper .bx-pager.bx-default-pager a.active:before, .after-nav .login-info a,
+.widget .clanwar-list .tabs li:hover a,
+.after-nav .login-info input[type="submit"], .after-nav .login-info a, input[type="button"],
+.match-map .map-score,
+.footer_widget .clanwar-list .scores,
+.footer_widget .clanwar-list .upcoming,
+.footer_widget .clanwar-list .playing,
+.widget .clanwar-list .scores,
+.widget .clanwar-list .upcoming,
+.widget .clanwar-list .playing, .msg_ntf,
+.clanwar-list .draw, .user-avatar,
+.navbar-inverse .navbar-nav > li.active > a,
+.footer_widget .clanwar-list .tabs li:hover a,
+.footer_widget .clanwar-list .tabs li.selected a,
+.widget .clanwar-list .tabs li:hover a,
+.widget .clanwar-list .tabs li.selected a, .bx-wrapper .bx-pager.bx-default-pager a:hover:before,
+.bx-wrapper .bx-pager.bx-default-pager a.active:before{
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px %innershadow%; ?>;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px %innershadow%; ?>;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 0 1px 1px %innershadow%; ?>;
+}
+
+.cart-outer, .friendswrapper .add-friend, .social-top a,  .ticker-title, .user-wrap a.btns, #buddypress div.item-list-tabs ul li, .clan-page .clan-nav li, .wpb_tabs_nav li, .nav-tabs > li,
+.woocommerce-page .product-wrap a.button, .button-medium, .button-small, .button-big, button[type="submit"], input[type="submit"]{
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px %innershadow%; ?>;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px %innershadow%; ?>;
+    box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 0 1px 1px %innershadow%; ?>;
+}
+.cart-outer:hover, .wpb_tabs_nav li:hover, .nav-tabs > li:hover, .clan-page .clan-nav li:hover, .woocommerce-page .product-wrap a.button:hover, .button-medium:hover, .button-small:hover, .button-big:hover, button[type="submit"]:hover, input[type="submit"]:hover, #sitewide-notice p,
+.friendswrapper .add-friend:hover, #buddypress div.item-list-tabs ul li:hover, .user-wrap a.btns:hover,.social-top a:hover, .navbar-inverse .navbar-nav > li.current-menu-item > a, .navbar-inverse .navbar-nav > li > a:hover, .navbar-wrapper .login-info .login-btn .fa{
+    -webkit-box-shadow: 0 0 10px %innershadowo%, inset 0 0 1px 1px %innershadow%; ?>;
+    -moz-box-shadow: 0 0 10px %innershadowo%, inset 0 0 1px 1px %innershadow%; ?>;
+    box-shadow: 0 0 10px %innershadowo%, inset 0 0 1px 1px %innershadow%; ?>;
+}
+
+.after-nav, .ticker-title:after{
+     border-color: %color%;
+}
+.next-arrow{
+    border-left: 30px solid %color%;
+}
+.newsbv li:hover .newsb-thumbnail, .newsbh li:hover .newsb-thumbnail a, div.bbp-template-notice, div.indicator-hint,  div.pagination a, div.pagination span,body.woocommerce nav.woocommerce-pagination ul li a, body.woocommerce nav.woocommerce-pagination ul li span{
+    border: 1px solid %color% ;
+}
+.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button, .woocommerce div.product .woocommerce-tabs ul.tabs li a, .woocommerce #content div.product .woocommerce-tabs ul.tabs li a, .woocommerce-page div.product .woocommerce-tabs ul.tabs li a, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a {
+    background: %color%   !important;
+}
+
+
+.woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce table.cart td.actions .button.checkout-button, .button-medium:after, .button-small:after, .button-big:after, button[type="submit"]:after, input[type="submit"]:after {
+    opacity:0.8;
+}
+.woocommerce span.onsale, .woocommerce-page span.onsale, .woocommerce-message, .woocommerce-error, .woocommerce-info, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce-page .widget_price_filter .ui-slider .ui-slider-range{
+    background:%color%  !important;
+}
+
+.woocommerce .product-wrap .add_to_cart_button.added, .woocommerce .product-wrap .add_to_cart_button.added:hover {
+    opacity:0.8;
+}
+
+div.bbp-template-notice, div.indicator-hint{
+    background:%color% ;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+.gallery-item a img:hover{
+border-color:%color% ;
+
+}
+
+
+</script>
+<script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+</body>
+</html>
